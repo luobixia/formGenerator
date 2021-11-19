@@ -1,17 +1,19 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+  <div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  mounted() {
+    // 取消开始的loading加载动画
+    const preLoad = document.querySelector('#pre-loader')
+    preLoad.style.display = 'none'
   }
 }
 </script>
